@@ -1,0 +1,57 @@
+<div class="container cart-container py-5">
+    <h2 class="mb-4 text-center">🛒 Your Shopping Cart</h2>
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+        <div *ngFor="let product of cartItems" class="card mb-3 shadow-sm">
+            <div class="row g-0 align-items-center p-3">
+                <div class="col-1 text-center">
+                    <input type="checkbox" style="width: 40px;height: 40px;" [checked]="product.selected"
+                        (change)="toggleSelection(product, $event)" class="form-check-input">
+                </div>
+                <div class="col-3 col-md-2 text-center">
+                    <img [src]="product.image" style="width: 80px;" [ngClass]="{'selected-image': product.selected}"
+                        alt="Product Image" class="img-fluid rounded">
+                </div>
+                <div class="col-8 col-md-3">
+                    <h5 class="mb-1">{{ product.title }}</h5>
+                    <p class="mb-0 text-muted"><small>Category: {{ product.category }}</small></p>
+                </div>
+                <div class="col-6 col-md-2 mt-3 mt-md-0">
+                    <input type="number" class="form-control text-center" [(ngModel)]="product.quantity"
+                        (ngModelChange)="updateQuantity(product.id, $event)" min="1">
+                </div>
+                <div class="col-6 col-md-2 mt-3 mt-md-0 text-center">
+                    <strong>${{ (product.price * (product.quantity || 1)).toFixed(2) }}</strong>
+                </div>
+                <div class="col-12 col-md-2 mt-3 mt-md-0 text-center">
+                    <button class="btn btn-outline-danger btn-sm" (click)="removeFromCart(product.id)">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-summary border-top pt-4 mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <a routerLink="/home" href="#" class="btn btn-outline-primary">← Continue
+                        Shopping</a>
+                    <button class="btn btn-outline-danger ms-2" (click)="clearCart()">Clear Cart</button>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-1">Subtotal: <strong>${{ getSubtotal().toFixed(2) }}</strong></p>
+                    <p class="mb-1">Tax (0%): <strong>${{ getTax().toFixed(2) }}</strong></p>
+                    <h5 class="mt-2">Total: <strong>${{ getTotal().toFixed(2) }}</strong></h5>
+                    <button class="btn btn-success mt-2" [disabled]="selectedItems.length === 0"
+                        (click)="proceedToCheckout()">
+                        Checkout Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #emptyCart>
+        <div class="alert alert-info text-center mt-5">
+            Your cart is currently empty.
+            <br>
+            <a href="#" routerLink="/home" class="btn btn-primary mt-3">Go Shopping Now</a>
+        </div>
+    </ng-template>
+</div>

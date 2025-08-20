@@ -1,0 +1,5 @@
+/* product-detail.css */
+.product-img {
+  max-height: 400px;
+  object-fit: contain;
+}

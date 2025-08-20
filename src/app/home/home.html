@@ -1,0 +1,25 @@
+<!-- <app-slider></app-slider>
+<div class="container">
+  <div class="row">
+    <app-productcard
+      *ngFor="let item of products; trackBy: trackById"
+      class="col-sm-6 col-md-4 col-lg-3 mb-0"
+      [product]="item"
+      (OnAddCart)="handleAddToCart($event)">
+    </app-productcard>
+  </div>
+</div> -->
+
+<div class="loading-overlay" *ngIf="isLoading">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<app-slider></app-slider>
+<div class="container">
+  <div class="row">
+    <app-productcard *ngFor="let item of products; trackBy: trackById" class="col-sm-6 col-md-4 col-lg-3 mb-0"
+      [product]="item" (OnAddCart)="handleAddToCart($event)">
+    </app-productcard>
+  </div>
+</div>

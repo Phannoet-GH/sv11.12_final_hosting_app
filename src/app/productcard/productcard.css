@@ -1,0 +1,148 @@
+.product-card {
+  margin: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image-container {
+  padding-bottom: 0;
+  height: auto;
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.product-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-description:hover {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #007bff;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-color: #e60023;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 10;
+}
+
+.product-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 3px 6px;
+  font-size: 0.7em;
+  border-radius: 3px;
+  z-index: 10;
+}
+
+.card-body {
+  padding: 0.5rem 1rem 0.5rem;
+}
+
+.price-info {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.current-price {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #333;
+  margin-right: 0.5rem;
+}
+
+.original-price {
+  font-size: 0.85rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-name {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.product-options {
+  display: flex;
+  gap: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.color-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+.color-swatch.grey {
+  background-color: #808080;
+}
+
+.color-swatch.dark-grey {
+  background-color: #404040;
+}
+
+.card-footer {
+  background-color: white;
+  border-top: none;
+  padding: 0.5rem 1rem;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.like-button:hover {
+  color: #e60023;
+}

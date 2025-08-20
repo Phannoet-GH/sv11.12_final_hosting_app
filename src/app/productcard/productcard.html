@@ -1,0 +1,46 @@
+<div class="card product-card">
+  <div class="product-image-container">
+    <a [routerLink]="['/product-detail', product.id]">
+      <img [src]="product.image" class="card-img-top product-image" alt="{{ product.title }}">
+    </a>
+    <div class="discount-badge" style="margin-left: 10px; border-radius: 5px;">-20%</div>
+  </div>
+
+  <div class="card-body">
+    <div class="price-info">
+      <span class="current-price" style="color: red; font-weight: bold;">
+        {{ product.price | currency }}
+      </span>
+      <span class="current-price" style="color: blue;">{{product.price * 4100 | cashKHR:'incash'}}</span>
+    </div>
+
+    <h5 class="card-title product-name product-title">
+      <a [routerLink]="['/product-detail', product.id]" style="text-decoration: none; color: inherit;">
+        {{ product.title }}
+      </a>
+    </h5>
+
+    <div class="product-options">
+      <div class="color-swatch grey"></div>
+      <div class="color-swatch dark-grey"></div>
+    </div>
+    <div class="product-description" style="cursor: pointer;">
+      <a [routerLink]="['/product-detail', product.id]" style="text-decoration: none; color: inherit;">
+        {{ product.description }}
+      </a>
+    </div>
+
+  </div>
+
+  <div class="card-footer d-flex justify-content-end align-items-center">
+    <button class="btn btn-link like-button" aria-label="Like product">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"
+        viewBox="0 0 16 16">
+        <path d="m8 2.748-.717-.737C5.6..." />
+      </svg>
+    </button>
+    <button class="btn btn-outline-primary add-to-cart-button" (click)="onAddToCartClick()">
+      Add to Cart
+    </button>
+  </div>
+</div>

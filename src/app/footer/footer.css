@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.footer-bs {
+    background-color: #343a40; 
+    color: #fff;
+    padding-top: 3rem;
+    flex-shrink: 0; 
+}
+
+.footer-bs h5 {
+    color: #fff; 
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.footer-bs p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-bs .list-unstyled li a {
+    color: #ced4da;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.footer-bs .list-unstyled li a:hover {
+    color: #007bff; 
+}
+
+.footer-bs .social-icons li a {
+    font-size: 1.2rem;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #343a40;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-bs .social-icons li a:hover {
+    background-color: #343a40; 
+    color: #fff;
+}
+
+.footer-bs .form-control {
+    background-color: #343a40; 
+    border: 1px solid #818181;
+    color: #f8f9fa;
+}
+
+.footer-bs .form-control::placeholder {
+    color: #adb5bd;
+}
+
+.footer-bs .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-bs .btn-primary:hover {
+    background-color: #818181;
+    border-color: #818181;
+}
+
+.footer-bs .payment-icons i {
+    color: #fff; 
+    font-size: 2rem; 
+    margin-right: 0.5rem;
+}
+
+.footer-bs hr {
+    border-color: #000000;
+}
+
+.footer-bs .text-muted {
+    color: #fff !important;
+}   

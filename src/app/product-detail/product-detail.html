@@ -1,0 +1,33 @@
+<div *ngIf="product" class="container mt-4 mb-4">
+  <div class="card product-detail-card">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img style="width: 250px;margin: 20px 80px;" [src]="product.image" class="img-fluid rounded-start" alt="{{ product.title }}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h1 class="card-title">{{ product.title }}</h1>
+          <p class="text-muted">{{ product.category }}</p>
+          <hr>
+          <div class="d-flex align-items-center mb-3">
+            <h2 class="price-section text-danger me-3">
+              {{ product.price | currency }}
+            </h2>
+            <h2 class="price-section text-primary">
+              {{ product.price * 4100 | cashKHR:'incash' }}
+            </h2>
+          </div>
+          <p class="card-text">{{ product.description }}</p>
+          <div class="mt-4">
+            <button class="btn btn-primary" (click)="onAddToCartClick()">
+              <i class="fas fa-cart-plus me-2"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!product" class="container mt-5 text-center">
+  <p>Product not found.</p>
+</div>
